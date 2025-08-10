@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <title> Calculate Effectveness 2 </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- TYPE SELECTION: TABLE/DIV -->
+    <div class="selectTypes" id="selectTypesID">
+        <!-- SELECT TYPES: BUTTON -->
+        <button class="classNormal"> NORMAL </button> <!-- NORMAL -->
+        <button class="classFire"> FIRE </button> <!-- FIRE -->
+        <button class="classWater"> WATER </button> <!-- WATER -->
+        <button class="classElectric"> ELECTRIC </button> <!-- ELECTRIC -->
+        <button class="classGrass"> GRASS </button> <!-- GRASS -->
+        <button class="classIce"> ICE </button> <!-- ICE -->
+        <button class="classFighting"> FIGHTING </button> <!-- FIGHTING -->
+        <button class="classPoison"> POISON </button> <!-- POISON -->
+        <button class="classGround"> GROUND </button> <!-- GROUND -->
+        <br>
+        <button class="classFlying"> FLYING </button> <!-- FLYING -->
+        <button class="classPsychic"> PSYCHIC </button> <!-- PSYCHIC -->
+        <button class="classBug"> BUG </button> <!-- BUG -->
+        <button class="classRock"> ROCK </button> <!-- ROCK -->
+        <button class="classGhost"> GHOST </button> <!-- GHOST -->
+        <button class="classDragon"> DRAGON </button> <!-- DRAGON -->
+        <button class="classDark"> DARK </button> <!-- DARK -->
+        <button class="classSteel"> STEEL </button> <!-- STEEL -->
+        <button class="classFairy"> FAIRY </button> <!-- FAIRY -->
+    </div>
+    
+    <!-- class="effectsTableTitlesSpan" id="effectsTableTitlesSpanID" -->
+
+    <!-- TYPE EFFECTS: TABLE/DIV-->
+    <div class="effectsTable" id="effectsTableID">
+        <br>
+        <!-- TYPES WEAKNESSES: ROW/DIV -->
+        <div class="weakEffects" id="weakEffectsID">
+        </div>
+
+        <br>
+        <!-- TYPES RESISTANCES: ROW/DIV -->
+        <div class="resistanceEffects" id="resistanceEffectsID">
+        </div>
+
+        <br>
+        <!-- TYPES NULL EFFECTS: ROW/DIV -->
+        <div class="nullEffects" id="nullEffectsID">
+        </div>
+
+        <br>
+        <!-- TYPES NO DAMAGE EFFECTS: ROW/DIV -->
+        <div class="noDamageEffects" id="noDamageEffectsID">
+        </div>
+
+        <br>
+        <!-- TYPES SUPER EFFECTIVE: ROW/DIV -->
+        <div class="superEffects" id="superEffectsID">
+        </div>
+
+        <!-- TYPES NOT VERY EFFECTIVE: ROW/DIV -->
+        <div class="notVeryEffective" id="notVeryEffectiveID">
+        </div>
+
+        <!-- EFFECT TABLE BUTTONS HIDDEN BOXES: SPAN -->
+        <span style = "display: none" class = "effectsHiddenSpan" id = "effectsHiddenSpanID"></span>
+    </div>
+
+    <!-- EFFECT TABLE FUNCTIONS: main.js/JavaScript File -->
+    <script src="main.js"></script>
+    
+    <!-- POKEMON TYPES/SELECT TYPES FUNCTIONS: pokemonTypes.js/JavaScript File -->
+    <script src="pokemonTypes.js"></script>
+
+</body>
+</html>

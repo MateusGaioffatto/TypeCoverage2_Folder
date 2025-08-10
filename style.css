@@ -1,0 +1,79 @@
+.selectTypes {
+    text-align: center;
+}
+body button {
+    margin-top: 5.5px;
+    margin-right: 1.5px;
+    border-radius: 1mm;
+    border:none;
+    width: 74px;
+    height: 5.5mm;
+    font-size: 80%;
+    box-shadow: 0px 2px rgba(132, 73, 73, 0.212);
+}
+.selectTypes button {cursor: pointer;}
+
+.classNormal {background-color: #aa9; color: #ffffff;}    /* NORMAL */
+.classFire   {background-color: #f42; color: #ffffff;}    /* FIRE */
+.classWater  {background-color: #39f; color: #ffffff;}    /* WATER */
+.classElectric {background-color: #fc3; color: #ffffff;}  /* ELECTRIC */
+.classGrass  {background-color: #7c5; color: #ffffff;}    /* GRASS */
+.classIce    {background-color: #6cf; color: #ffffff;}    /* ICE */
+.classFighting {background-color: #b54; color: #ffffff;}  /* FIGHTING */
+.classPoison {background-color: #a59; color: #ffffff;}    /* POISON */
+.classGround {background-color: #db5; color: #ffffff;}    /* GROUND */
+.classFlying {background-color: #89f; color: #ffffff;}    /* FLYING */
+.classPsychic {background-color: #f59; color: #ffffff;}   /* PSYCHIC */
+.classBug    {background-color: #ab2; color: #ffffff;}    /* BUG */
+.classRock   {background-color: #ba6; color: #ffffff;}    /* ROCK */
+.classGhost  {background-color: #66b; color: #ffffff;}    /* GHOST */
+.classDragon {background-color: #76e; color: #ffffff;}    /* DRAGON */
+.classDark   {background-color: #754; color: #ffffff;}    /* DARK */
+.classSteel  {background-color: #aab; color: #ffffff;}    /* STEEL */
+.classFairy  {background-color: #e9e; color: #ffffff;}    /* FAIRY */
+
+.effectsTable {
+    margin-top: 40mm;
+    /* background-color: rgb(250, 250, 250);  */
+    justify-self: center;
+    text-align: center;   
+    min-height: 24rem;
+    border-radius: 5mm;
+}   
+.effectsTable h1 {
+    color: rgb(0, 0, 0) ;
+    font-size: 1.25rem;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+    margin-bottom: 0;
+}
+.effectsTable button{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+
+    cursor: pointer;
+}
+
+.effectsHiddenSpan {
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
+    color: rgb(255, 221, 87);
+    
+    position: absolute;
+    bottom: 0;
+    
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+
+    z-index: -1;
+    
+    border: 0.5px solid;
+    border-radius: 0 0 7px 7px;
+    display: block;
+
+    width: 50%;
+    height: 90%;
+}
+
