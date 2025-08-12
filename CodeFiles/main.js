@@ -10,9 +10,6 @@ let doubleClick = 0;
 // STORE THE SELECTED TYPE BUTTONS: ARRAY VARIABLE
 let typeSelectedCount = [];
 
-// STORE THE ROWS OF THE EFFECTS TABLE: ARRAY VARIABLE
-let effectsTableRows = document.querySelectorAll(".effectsTable div");
-
 // STORE THE BUTTONS OF THE RESPECTIVE EFFECTS ROW: ARRAY VARIABLES
 let weakEffectsRow = [];
 let resistanceEffectsRow = [];
@@ -21,8 +18,11 @@ let noDamageEffectsRow = [];
 let superEffectsRow = [];
 let notVeryEffectiveRow = [];
 
+// STORE THE ROWS OF THE EFFECTS TABLE: NODE LIST/ARRAY VARIABLE
+let effectsTableRows = document.querySelectorAll(".effectsTable div");
 let effectsTableArrayRows = [weakEffectsRow, resistanceEffectsRow, nullEffectsRow, noDamageEffectsRow, superEffectsRow, notVeryEffectiveRow]
 
+// STORE EFFECT TABLE HIDDEN SPAN: CONSTANT VARIABLE
 const effectsTableHiddenSpan = document.getElementById("effectsHiddenSpanID");
 
 // BREAKROW ELEMENT FOR QUICK USE: CONSTANT VARIABLE
@@ -92,12 +92,12 @@ function checkEffectTableButtons() {
 let effectTableRowsTitles = ["titleZero","titleOne","titleTwo","titleThree","titleFour", "titleFive"];
 for (let i = 0; i < effectTableRowsTitles.length; i++) {effectTableRowsTitles[i] = document.createElement("h1");}
 
+// APPEND EFFECTS TITLES: FOR LOOP
+for(let i = 0; i < effectsTableRows.length; i++) {
+    effectsTableRows[i].appendChild(effectTableRowsTitles[i]);
+}
+
 function checkEffectsTitle() {
-    if (doubleClick === 1) { // APPEND EFFECTS TITLES: FOR LOOP/IF STATEMENT    
-        for(let i = 0; i < effectsTableRows.length; i++) {
-            effectsTableRows[i].appendChild(effectTableRowsTitles[i]);
-        }
-    }
 
     if (doubleClick > 1) { // WHEN DOUBLE TYPES WERE SELECTED
         effectTableRowsTitles.forEach(effectTitles => {
@@ -123,17 +123,8 @@ function checkEffectsTitle() {
 }
 
 function nameIt() {
-    for (let i = 0; i < effectsTableArrayRows.length; i++) {
-        if (effectsTableArrayRows[i].length === 0) {
-            switch (i) {
-                case 0: hideWeakEffects(); break;
-                case 1: hideResistanceEffects(); break;
-                case 2: hideNullEffects(); break;
-                case 3: hideNoDamageEffects(); break;
-                case 4: hideSuperEffects(); break;
-                case 5: hideNotVeryEffective(); break;
-                default: break;
-            }
-        }
-    }
+    effectsTableRows.forEach(effectRow => {
+        const effectRowButtons = effectRow.querySelectorAll('button');
+        console.log(effectRowButtons.length)
+    })
 }

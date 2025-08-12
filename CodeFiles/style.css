@@ -34,7 +34,7 @@ body button {
 
 .effectsTable {
     margin-top: 40mm;
-    /* background-color: rgb(250, 250, 250);  */
+    background-color: rgb(250, 250, 250); 
     justify-self: center;
     text-align: center;   
     min-height: 24rem;
