@@ -43,12 +43,14 @@ function checkEffectTableButtons() {
         effect.appendChild(effectsButtonsHiddenSpan);
 
         effect.addEventListener('mouseover', function () {
-            effectsButtonsHiddenSpan.style.transform = "translateY(22.5px)";
-            effectsButtonsHiddenSpan.textContent = checkHiddenSpanContent(effectsButtonsHiddenSpan);            
+            effectsButtonsHiddenSpan.textContent = checkHiddenSpanContent(effectsButtonsHiddenSpan); // CHANGE THE TEXT CONTENT OF THE HOVERED BUTTON SPAN CHIELD
+            effectsButtonsHiddenSpan.style.transform = "translateY(22.5px)"; // CHANGE THE POSITION(Y) OF THE HOVERED BUTTON SPAN CHIELD
+            effect.style.zIndex = 1; // CHANGE THE Z-INDEX OF THE HOVERED BUTTON AND THE SPAN CHIELD
         });
         
         effect.addEventListener('mouseout', function () {
-            effectsButtonsHiddenSpan.style.transform = "translateY(0)";
+            effect.style.zIndex = "auto";  // RESET THE Z-INDEX OF THE HOVERED BUTTON AND THE SPAN CHIELD
+            effectsButtonsHiddenSpan.style.transform = "translateY(0)"; // RESET THE POSITION(Y) OF THE HOVERED BUTTON SPAN CHIELD
         });
     })
 
@@ -78,7 +80,6 @@ function checkEffectTableButtons() {
         effectsButtonsHiddenSpan.textContent = "0";
         effectsButtonsHiddenSpan.style.backgroundColor = "rgb(64, 64, 64)";
     }
-    // CHANGE THE z-index OF EACH EFFECTS TABLE BUTTON ON MOUSE HOVER: FUNCTION
 
     // CHANGE THE padding (top = "0" / horizontal = "0.75rem" / bottom = "0.75rem") OF EACH EFFECTS TABLE ROW: FUNCTION
     if (doubleClick === 1) {effectsTableRows.forEach(effectsRow => {effectsRow.style.padding = "0 0.75rem 0.75rem";})}
