@@ -28,6 +28,9 @@ const effectsTableHiddenSpan = document.getElementById("effectsHiddenSpanID");
 // BREAKROW ELEMENT FOR QUICK USE: CONSTANT VARIABLE
 const breakRow = document.createElement("br");
 
+
+// NAME IT! DESSE PONTO EM DIANTE =>
+
 // FUNCTIONS AND INTERACTIONS TO THE EFFECTS TABLE BUTTONS: FUNCTION
 function checkEffectTableButtons() {
     // STORE ALL THE BUTTONS OF THE EFFECTS TABLE: ARRAY CONSTANT VARIABLE
@@ -50,7 +53,7 @@ function checkEffectTableButtons() {
         
         effect.addEventListener('mouseout', function () {
             effect.style.zIndex = "auto";  // RESET THE Z-INDEX OF THE HOVERED BUTTON AND THE SPAN CHIELD
-            effectsButtonsHiddenSpan.style.transform = "translateY(0)"; // RESET THE POSITION(Y) OF THE HOVERED BUTTON SPAN CHIELD
+            effectsButtonsHiddenSpan.style.transform = "translateY(0)"; // RESET THE POSITION(Y) OF THE HOVERED BUTTON SPAN CHIELD    
         });
     })
 
@@ -84,7 +87,8 @@ function checkEffectTableButtons() {
     // CHANGE THE padding (top = "0" / horizontal = "0.75rem" / bottom = "0.75rem") OF EACH EFFECTS TABLE ROW: FUNCTION
     if (doubleClick === 1) {effectsTableRows.forEach(effectsRow => {effectsRow.style.padding = "0 0.75rem 0.75rem";})}
 
-    nameIt();
+    checkEffectTableRowsTitlesDisplayValue();
+    nameIt(effectTableButtons);
 
 }
 
@@ -92,12 +96,12 @@ function checkEffectTableButtons() {
 let effectTableRowsTitles = ["titleZero","titleOne","titleTwo","titleThree","titleFour", "titleFive"];
 for (let i = 0; i < effectTableRowsTitles.length; i++) {effectTableRowsTitles[i] = document.createElement("h1");}
 
-// APPEND EFFECTS TITLES: FOR LOOP
-for(let i = 0; i < effectsTableRows.length; i++) {
-    effectsTableRows[i].appendChild(effectTableRowsTitles[i]);
-}
-
 function checkEffectsTitle() {
+    if (doubleClick === 1) { // APPEND EFFECTS TITLES: FOR LOOP/IF STATEMENT
+        for(let i = 0; i < effectsTableRows.length; i++) {
+            effectsTableRows[i].appendChild(effectTableRowsTitles[i]);
+        }
+    }
 
     if (doubleClick > 1) { // WHEN DOUBLE TYPES WERE SELECTED
         effectTableRowsTitles.forEach(effectTitles => {
@@ -122,9 +126,25 @@ function checkEffectsTitle() {
     }
 }
 
-function nameIt() {
+function checkEffectTableRowsTitlesDisplayValue() {
     effectsTableRows.forEach(effectRow => {
         const effectRowButtons = effectRow.querySelectorAll('button');
-        console.log(effectRowButtons.length)
+        effectRow.style.display = effectRowButtons.length === 0 ? "none" : "block";
     })
+}
+
+// LEMBRE-SE DE ADICIONAR COMENTÁRIOS SOBRE ISSO:
+function nameIt(effectTableButtons) {
+
+    effectTableButtons.forEach(effectButton => {
+        effectButton.addEventListener('click', function() {
+            let effectButtonTextLink;
+            effectButtonTextLink = effectButton.textContent.replace(/\d+/g, '');
+            effectButtonTextLink = effectButtonTextLink.replace(/\s+/g, '');
+
+            window.location.href = `https://pokemondb.net/type/${effectButtonTextLink.toLowerCase()}`;
+            // console.log(effectButtonTextLink.toLowerCase())
+        })
+    })
+
 }

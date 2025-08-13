@@ -4,15 +4,25 @@
 body button {
     margin-top: 5.5px;
     margin-right: 1.5px;
+    
     border-radius: 1mm;
-    border:none;
+    border: none;
+
     width: 74px;
     height: 5.5mm;
+    
     font-size: 80%;
+    
     box-shadow: 0px 2px rgba(132, 73, 73, 0.212);
 }
-.selectTypes button {cursor: pointer;}
+.selectTypes button {
+    cursor: pointer;
+    transition: transform 1s;
+}
 
+.selectTypes button:hover {
+    transform: scale(0.95);
+}
 .classNormal {background-color: #aa9; color: #ffffff;}    /* NORMAL */
 .classFire   {background-color: #f42; color: #ffffff;}    /* FIRE */
 .classWater  {background-color: #39f; color: #ffffff;}    /* WATER */
