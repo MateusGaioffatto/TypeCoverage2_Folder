@@ -18,6 +18,11 @@ let noDamageEffectsRow = [];
 let superEffectsRow = [];
 let notVeryEffectiveRow = [];
 
+const learnMoreAboutText = document.getElementById("learnMoreAboutEachTypeParagraphID");
+
+// STORE THE EFFECT TABLE: CONSTANT VARIABLE
+const effectTable = document.getElementById("effectsTableID");
+
 // STORE THE ROWS OF THE EFFECTS TABLE: NODE LIST/ARRAY VARIABLE
 let effectsTableRows = document.querySelectorAll(".effectsTable div");
 let effectsTableArrayRows = [weakEffectsRow, resistanceEffectsRow, nullEffectsRow, noDamageEffectsRow, superEffectsRow, notVeryEffectiveRow]
@@ -44,22 +49,16 @@ function checkEffectTableButtons() {
         effect.appendChild(effectsButtonsHiddenSpan);
 
         effect.addEventListener('mouseover', function () {
-            nameIt(true);
             effectsButtonsHiddenSpan.textContent = checkHiddenSpanContent(effectsButtonsHiddenSpan); // CHANGE THE TEXT CONTENT OF THE HOVERED BUTTON SPAN CHIELD
             effectsButtonsHiddenSpan.style.transform = "translateY(22.5px)"; // CHANGE THE POSITION(Y) OF THE HOVERED BUTTON SPAN CHIELD
             effect.style.zIndex = 1; // CHANGE THE Z-INDEX OF THE HOVERED BUTTON AND THE SPAN CHIELD
         });
         
         effect.addEventListener('mouseout', function () {
-            nameIt(false);
             effect.style.zIndex = "auto";  // RESET THE Z-INDEX OF THE HOVERED BUTTON AND THE SPAN CHIELD
             effectsButtonsHiddenSpan.style.transform = "translateY(0)"; // RESET THE POSITION(Y) OF THE HOVERED BUTTON SPAN CHIELD    
         });
     })
-
-    function nameIt(displayLine) {
-        document.getElementById("learnMoreAboutEachTypeParagraphID").style.display = displayLine ? "inline" : "none"; 
-    }
 
     // CHANGE THE HIDDEN BOX CONTENT ON MOUSE HOVER: FUNCTIONS
     function checkHiddenSpanContent(hiddenSpan) {

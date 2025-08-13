@@ -1,8 +1,5 @@
-selectTypesButtons.forEach(effect => {
-    effect.addEventListener('click', function() {
-        document.getElementById("effectsTableID").style.borderWidth = "1px";
-    })
-})
+effectTable.addEventListener('mouseover', function() {learnMoreAboutText.style.display = "inline";}) // TRUE = DISPLAY: "INLINE"
+effectTable.addEventListener('mouseout', function() {learnMoreAboutText.style.display = "none";}) // FALSE = DISPLAY: "NONE"
 
 // POKEMON TYPES: FUNCTIONS
 
