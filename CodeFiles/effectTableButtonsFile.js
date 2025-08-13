@@ -45,6 +45,9 @@ function createResistences(resistanceIndex) {
             resistanceEffectsRow.push(resistanceEffectsButtons);
             document.getElementById("resistanceEffectsID").appendChild(resistanceEffectsButtons);
         }
+        else {
+            console.log(resistanceEffectsButtons); // <= DADOS DOS TIPOS DUPLICADOS, PODE SERVIR!
+        }
     }
     if (doubleClick === 2) {
         checkDoubleTypeEffects();

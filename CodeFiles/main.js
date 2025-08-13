@@ -18,6 +18,7 @@ let noDamageEffectsRow = [];
 let superEffectsRow = [];
 let notVeryEffectiveRow = [];
 
+// STORE LEARN MORE ABOUT EACH TYPE PARAGRAPH TEXT: CONSTANT VARIABLE 
 const learnMoreAboutText = document.getElementById("learnMoreAboutEachTypeParagraphID");
 
 // STORE THE EFFECT TABLE: CONSTANT VARIABLE
@@ -76,10 +77,20 @@ function checkEffectTableButtons() {
         effectsButtonsHiddenSpan.textContent = "2";
         effectsButtonsHiddenSpan.style.backgroundColor = "rgb(78, 154, 6)";
     }
+    // HIDDEN BOX/SPAN TWO TIMES SUPER EFFECTIVE STYLE AND CONTENT: FUNCTION
+    function twoTimesSuperEffectiveSpanContent(effectsButtonsHiddenSpan) {
+        effectsButtonsHiddenSpan.textContent = "1/4";
+        effectsButtonsHiddenSpan.style.backgroundColor = "rgba(115, 210, 22, 1)";
+    }
     // HIDDEN BOX/SPAN NOT VERY EFFECTIVE STYLE AND CONTENT: FUNCTION
     function notVeryEffectiveSpanContent(effectsButtonsHiddenSpan) {
         effectsButtonsHiddenSpan.textContent = "1/2";
         effectsButtonsHiddenSpan.style.backgroundColor = "rgb(164, 0, 0)";
+    }
+    // HIDDEN BOX/SPAN TWO TIMES NOT VERY EFFECTIVE STYLE AND CONTENT: FUNCTION
+    function twoTimesNotVeryEffectiveSpanContent(effectsButtonsHiddenSpan) {
+        effectsButtonsHiddenSpan.textContent = "1/4";
+        effectsButtonsHiddenSpan.style.backgroundColor = "rgba(124, 0, 0, 1)";
     }
     // HIDDEN BOX/SPAN NULL EFFECTS STYLE AND CONTENT: FUNCTION
     function nullEffectsSpanContent(effectsButtonsHiddenSpan) {
