@@ -29,8 +29,6 @@ const effectsTableHiddenSpan = document.getElementById("effectsHiddenSpanID");
 const breakRow = document.createElement("br");
 
 
-// NAME IT! DESSE PONTO EM DIANTE =>
-
 // FUNCTIONS AND INTERACTIONS TO THE EFFECTS TABLE BUTTONS: FUNCTION
 function checkEffectTableButtons() {
     // STORE ALL THE BUTTONS OF THE EFFECTS TABLE: ARRAY CONSTANT VARIABLE
@@ -46,16 +44,22 @@ function checkEffectTableButtons() {
         effect.appendChild(effectsButtonsHiddenSpan);
 
         effect.addEventListener('mouseover', function () {
+            nameIt(true);
             effectsButtonsHiddenSpan.textContent = checkHiddenSpanContent(effectsButtonsHiddenSpan); // CHANGE THE TEXT CONTENT OF THE HOVERED BUTTON SPAN CHIELD
             effectsButtonsHiddenSpan.style.transform = "translateY(22.5px)"; // CHANGE THE POSITION(Y) OF THE HOVERED BUTTON SPAN CHIELD
             effect.style.zIndex = 1; // CHANGE THE Z-INDEX OF THE HOVERED BUTTON AND THE SPAN CHIELD
         });
         
         effect.addEventListener('mouseout', function () {
+            nameIt(false);
             effect.style.zIndex = "auto";  // RESET THE Z-INDEX OF THE HOVERED BUTTON AND THE SPAN CHIELD
             effectsButtonsHiddenSpan.style.transform = "translateY(0)"; // RESET THE POSITION(Y) OF THE HOVERED BUTTON SPAN CHIELD    
         });
     })
+
+    function nameIt(displayLine) {
+        document.getElementById("learnMoreAboutEachTypeParagraphID").style.display = displayLine ? "inline" : "none"; 
+    }
 
     // CHANGE THE HIDDEN BOX CONTENT ON MOUSE HOVER: FUNCTIONS
     function checkHiddenSpanContent(hiddenSpan) {
@@ -84,12 +88,11 @@ function checkEffectTableButtons() {
         effectsButtonsHiddenSpan.style.backgroundColor = "rgb(64, 64, 64)";
     }
 
-    // CHANGE THE padding (top = "0" / horizontal = "0.75rem" / bottom = "0.75rem") OF EACH EFFECTS TABLE ROW: FUNCTION
+    // CHANGE THE padding (top = "0" / horizontal = "0.75rem" / bottom = "0.75rem") OF EACH EFFECTS TABLE ROW: FOR EACH FUNCTION/ IF STATEMENT
     if (doubleClick === 1) {effectsTableRows.forEach(effectsRow => {effectsRow.style.padding = "0 0.75rem 0.75rem";})}
 
     checkEffectTableRowsTitlesDisplayValue();
-    nameIt(effectTableButtons);
-
+    addPokemonDBlinkToEffectTableButtons(effectTableButtons);
 }
 
 // CHECK EFFECTS ROW TITLES TEXT CONTENT: FUNCTION
@@ -126,6 +129,7 @@ function checkEffectsTitle() {
     }
 }
 
+// CHANGE EFFECT ROWS TILES DISPLAY VALUE: FUNCTION
 function checkEffectTableRowsTitlesDisplayValue() {
     effectsTableRows.forEach(effectRow => {
         const effectRowButtons = effectRow.querySelectorAll('button');
@@ -133,18 +137,15 @@ function checkEffectTableRowsTitlesDisplayValue() {
     })
 }
 
-// LEMBRE-SE DE ADICIONAR COMENTÁRIOS SOBRE ISSO:
-function nameIt(effectTableButtons) {
-
+// ADD POKEMON DATABASE LINK TO THE EFFECT TABLE BUTTONS: FUNCTION
+function addPokemonDBlinkToEffectTableButtons(effectTableButtons) {
     effectTableButtons.forEach(effectButton => {
-        effectButton.addEventListener('click', function() {
+        effectButton.addEventListener('dblclick', function() {
             let effectButtonTextLink;
             effectButtonTextLink = effectButton.textContent.replace(/\d+/g, '');
             effectButtonTextLink = effectButtonTextLink.replace(/\s+/g, '');
 
-            window.location.href = `https://pokemondb.net/type/${effectButtonTextLink.toLowerCase()}`;
-            // console.log(effectButtonTextLink.toLowerCase())
+            window.open(`https://pokemondb.net/type/${effectButtonTextLink.toLowerCase()}`);
         })
     })
-
 }

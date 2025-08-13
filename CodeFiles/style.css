@@ -42,13 +42,31 @@ body button {
 .classSteel  {background-color: #aab; color: #ffffff;}    /* STEEL */
 .classFairy  {background-color: #e9e; color: #ffffff;}    /* FAIRY */
 
+.learnMoreAboutEachTypeParagraph {
+    position: relative;
+    bottom: 20px;
+
+    color: rgb(180, 180, 180);    
+    font-size: xx-small;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', 'sans-serif';
+
+    display: none;
+}
+
 .effectsTable {
-    margin-top: 40mm;
-    background-color: rgb(250, 250, 250); 
+    background-color: rgb(247, 247, 247); 
+    
     justify-self: center;
+    
     text-align: center;   
+    
     min-height: 24rem;
+    margin-top: 40mm;
+    
     border-radius: 5mm;
+    border: black;
+    border-style: solid;
+    border-width: 0;
 }   
 .effectsTable h1 {
     color: rgb(0, 0, 0) ;

@@ -1,3 +1,9 @@
+selectTypesButtons.forEach(effect => {
+    effect.addEventListener('click', function() {
+        document.getElementById("effectsTableID").style.borderWidth = "1px";
+    })
+})
+
 // POKEMON TYPES: FUNCTIONS
 
 // NORMAL TYPE:

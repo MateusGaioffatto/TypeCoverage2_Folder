@@ -169,5 +169,7 @@ function hideAllEffectsButtons() {
     hideNotVeryEffective();
 
     effectsTableRows.forEach(effectsRow => {effectsRow.style.padding = "0 0";})
+    document.getElementById("effectsTableID").style.borderWidth = "0px";
+
     doubleClick = 0;
 }
