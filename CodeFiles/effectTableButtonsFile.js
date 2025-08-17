@@ -31,6 +31,7 @@ function createWeakEffects(weakIndex) {
             weakEffectsRow.push(weakEffectsButtons);
             document.getElementById("weakEffectsID").appendChild(weakEffectsButtons);            
         }           
+        else {twoTimesWeakEffectsRow.push(weakEffectsButtons);}
     }
 }
 // CREATE RESISTANCES: FUNCTION

@@ -9,7 +9,7 @@ effectTable.addEventListener('mouseout', function() {learnMoreAboutText.style.di
 // selectTypesButtons.forEach(selectButton => {
 
 //     selectButton.addEventListener('click', function() {
-
+            
 //     })
 
 // })
