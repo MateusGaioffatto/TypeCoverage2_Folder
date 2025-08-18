@@ -24,38 +24,34 @@ function checkEffectTableButtons() {
         });
     })
 
+    function nameIt2(effectsButton, twoTimesEffectsButtons, arraySpanContentIndex, hiddenSpan) {
+        twoTimesEffectsArrayRows[twoTimesEffectsButtons].forEach(twoTimesEffects => {
+            twoTimesEffects.className === effectsButton.className ? 
+                arraySpanContent[arraySpanContentIndex](hiddenSpan) : arraySpanContent[arraySpanContentIndex-1](hiddenSpan);
+        })
+    }
+
     // CHANGE THE HIDDEN BOX CONTENT ON MOUSE HOVER: FUNCTIONS
     function checkHiddenSpanContent(hiddenSpan) {
-        effectsTableRows[0].addEventListener("mouseover", function() {superEffectsSpanContent(hiddenSpan);}) // WEAKNESSES
-        effectsTableRows[1].addEventListener("mouseover", function() {notVeryEffectiveSpanContent(hiddenSpan);}) // RESISTANCESES
-        effectsTableRows[2].addEventListener("mouseover", function() {nullEffectsSpanContent(hiddenSpan);}) // NULL EFFECTS
-        effectsTableRows[3].addEventListener("mouseover", function() {nullEffectsSpanContent(hiddenSpan);}) // NO DAMAGE EFFECTS
-        effectsTableRows[4].addEventListener("mouseover", function() {superEffectsSpanContent(hiddenSpan);}) // VERY EFFECTIVE EFFECTS
-        effectsTableRows[5].addEventListener("mouseover", function() {notVeryEffectiveSpanContent(hiddenSpan);}) // NOT VERY EFFECTIVE EFFECTS
+        weakEffectsRow.forEach(effect => {effect.addEventListener("mouseover", function() {nameIt2(this, 0, 1, hiddenSpan);})}) // WEAKNESSES
+        resistanceEffectsRow.forEach(effect => {effect.addEventListener("mouseover", function() {nameIt2(this, 1, 3, hiddenSpan);})}) // RESISTANCES
+        nullEffectsRow.forEach(effect => {effect.addEventListener("mouseover", function() {nullEffectsSpanContent(hiddenSpan);})}) // NULL EFFECTS
+        noDamageEffectsRow.forEach(effect => {effect.addEventListener("mouseover", function() {nullEffectsSpanContent(hiddenSpan);})}) // NO DAMAGE EFFECTS
+        superEffectsRow.forEach(effect => {effect.addEventListener("mouseover", function() {nameIt2(this, 2, 1, hiddenSpan);})}) // SUPER EFFECTS
+        notVeryEffectiveRow.forEach(effect => {effect.addEventListener("mouseover", function() {nameIt2(this, 3, 3, hiddenSpan);})}) // NOT VERY EFFECTIVE EFFECTS
     }
 
-    function nameIt(effectsRowsIndex, twoTimesEffectsRowsIndex) {
-        return effectsTableArrayRows[effectsRowsIndex].some(oneTimeEffect =>
-            twoTimesEffectsArrayRows[twoTimesEffectsRowsIndex].some(twoTimesEffects =>
-                oneTimeEffect.textContent === twoTimesEffects.textContent
-            )
-        );
-    }
-
+    const arraySpanContent = [
+        superEffectsSpanContent,
+        twoTimesSuperEffectiveSpanContent,
+        notVeryEffectiveSpanContent,
+        twoTimesNotVeryEffectiveSpanContent
+    ]
 
     // HIDDEN BOX/SPAN SUPER EFFECTS STYLE AND CONTENT: FUNCTION
     function superEffectsSpanContent(effectsButtonsHiddenSpan) {
-        if(nameIt(0,0)){
-            effectsButtonsHiddenSpan.textContent = "4";
-            effectsButtonsHiddenSpan.style.backgroundColor = "rgba(115, 210, 22, 1)";
-                        console.log(effectsButtonsHiddenSpan.textContent)
-
-        }
-        else {
-            effectsButtonsHiddenSpan.textContent = "2";
-            effectsButtonsHiddenSpan.style.backgroundColor = "rgb(78, 154, 6)";
-        }
-
+        effectsButtonsHiddenSpan.textContent = "2";
+        effectsButtonsHiddenSpan.style.backgroundColor = "rgb(78, 154, 6)";
     }
     // HIDDEN BOX/SPAN TWO TIMES SUPER EFFECTIVE STYLE AND CONTENT: FUNCTION
     function twoTimesSuperEffectiveSpanContent(effectsButtonsHiddenSpan) {
